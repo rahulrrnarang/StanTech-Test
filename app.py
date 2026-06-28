@@ -143,9 +143,6 @@ def get_ticket(
         raise HTTPException(status_code=404, detail="Ticket not found")
     return serialize(ticket)
 
-
-# TODO (candidate): add an endpoint to reassign a ticket to a different agent.
-
 @app.patch("/tickets/{ticket_id}/assign", response_model=TicketOut)
 def assign_ticket(
     ticket_id: int,
